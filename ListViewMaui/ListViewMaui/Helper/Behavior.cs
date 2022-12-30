@@ -1,6 +1,13 @@
 ﻿using Microsoft.Maui.Controls;
-using Syncfusion.DataSource;
+using Syncfusion.Maui.DataSource;
+using Syncfusion.Maui.GridCommon.ScrollAxis;
 using Syncfusion.Maui.ListView;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace ListViewMaui
 {

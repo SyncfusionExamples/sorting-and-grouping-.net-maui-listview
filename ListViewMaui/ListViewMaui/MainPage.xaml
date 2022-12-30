@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.ListView;assembly=Syncfusion.Maui.ListView"
+             xmlns:local="clr-namespace:ListViewMaui"
+             x:Class="ListViewMaui.MainPage">
+
+    <ContentPage.BindingContext>
+        <local:ContactsViewModel x:Name="viewModel"/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <syncfusion:SfListView x:Name="listView" ItemsSource="{Binding Items}" ItemSize="50">
+        <syncfusion:SfListView.Behaviors>
+            <local:Behavior/>
+        </syncfusion:SfListView.Behaviors>
+        <syncfusion:SfListView.ItemTemplate>
+            <DataTemplate>
+                <StackLayout>
+                    <Grid Padding="10,0,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Label LineBreakMode="NoWrap"  TextColor="Black"
+                   VerticalTextAlignment="End" 
+                   Text="{Binding ContactName}"/>
+                        <Label Grid.Row="1"
+                   VerticalTextAlignment="Start" TextColor="Black" 
+                   Text="{Binding DateOfBirth, StringFormat='{0:dd/MM/yyyy}', Mode=TwoWay}"/>
+                    </Grid>
+                </StackLayout>
+            </DataTemplate>
+        </syncfusion:SfListView.ItemTemplate>
+        <syncfusion:SfListView.GroupHeaderTemplate>
+            <DataTemplate>
+                <Label Text= "{Binding Key}" Padding="5,0,0,0" VerticalOptions="Center" BackgroundColor="Teal" FontSize="20" FontAttributes="Bold" TextColor="White"/>
+            </DataTemplate>
+        </syncfusion:SfListView.GroupHeaderTemplate>
+    </syncfusion:SfListView>
+    </ContentPage.Content>
+
+</ContentPage>

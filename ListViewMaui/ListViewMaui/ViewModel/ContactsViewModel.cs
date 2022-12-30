@@ -1,19 +1,36 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace ListViewMaui
 {
-    public class ContactsViewModel
+    public class ContactsViewModel : INotifyPropertyChanged
     {
+
         #region Properties
-        public ObservableCollection<Contacts> Items { get; set; }
+        private ObservableCollection<Contacts> items;
+        public ObservableCollection<Contacts> Items
+        {
+            get 
+            { 
+                return items; 
+            }
+            set
+            {
+                items = value;
+                OnPropertyChanged("Items");
+            }
+        }
         #endregion
 
         #region Constructor
         public ContactsViewModel()
         {
-            Items = new ObservableCollection<Contacts>();
+            items = new ObservableCollection<Contacts>();
             var date = DateTimeOffset.Now;
             Random r = new Random();
             for (int i = 0; i < ContactNames.Count() - 1; i++)
@@ -88,6 +105,18 @@ namespace ListViewMaui
             "Joshua",
             "Parker"
         };
+
+        #endregion
+
+        #region Interface Member
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public void OnPropertyChanged(string name)
+        {
+            if (this.PropertyChanged != null)
+                this.PropertyChanged(this, new PropertyChangedEventArgs(name));
+        }
 
         #endregion
     }
