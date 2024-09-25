@@ -1,23 +1,20 @@
-﻿using Microsoft.Maui.Hosting;
-using Microsoft.Maui.Controls.Hosting;
-using Syncfusion.Maui.ListView.Hosting;
+﻿using Syncfusion.Maui.Core.Hosting;
 
-namespace ListViewMaui
+namespace ListViewMaui;
+
+public static class MauiProgram
 {
-	public static class MauiProgram
+	public static MauiApp CreateMauiApp()
 	{
-		public static MauiApp CreateMauiApp()
-		{
-			var builder = MauiApp.CreateBuilder();
-			builder
-				.UseMauiApp<App>()
-				.ConfigureFonts(fonts =>
-				{
-					fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-				});
-
-			builder.ConfigureSyncfusionListView();
-			return builder.Build();
-		}
+		var builder = MauiApp.CreateBuilder();
+		builder
+			.UseMauiApp<App>()
+			.ConfigureFonts(fonts =>
+			{
+				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
+				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+			});
+        builder.ConfigureSyncfusionCore();
+        return builder.Build();
 	}
 }
