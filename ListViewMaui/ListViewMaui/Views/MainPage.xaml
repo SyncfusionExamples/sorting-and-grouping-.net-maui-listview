@@ -23,7 +23,7 @@
                             <Label LineBreakMode="NoWrap"  TextColor="Black"
                    VerticalTextAlignment="End" 
                    Text="{Binding ContactName}"/>
-                            <Label GridLayout.Row="1"
+                            <Label Grid.Row="1"
                    VerticalTextAlignment="Start" TextColor="Black" 
                    Text="{Binding DateOfBirth, StringFormat='{0:dd/MM/yyyy}', Mode=TwoWay}"/>
                         </Grid>

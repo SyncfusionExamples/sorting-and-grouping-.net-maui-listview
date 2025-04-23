@@ -5,7 +5,7 @@ namespace ListViewMaui
 {
     public class Contacts : INotifyPropertyChanged
     {
-        private string contactName;
+        private string? contactName;
         private DateTimeOffset dateOfBirth;
 
         public Contacts(string name, DateTimeOffset number)
@@ -17,7 +17,7 @@ namespace ListViewMaui
         {
 
         }
-        public string ContactName
+        public string? ContactName
         {
             get { return contactName; }
             set
@@ -42,7 +42,7 @@ namespace ListViewMaui
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
 
         public void RaisedOnPropertyChanged(string _PropertyName)
         {
