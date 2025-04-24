@@ -1,5 +1,6 @@
-﻿using Syncfusion.DataSource;
-using Syncfusion.DataSource.Extensions;
+﻿
+using Syncfusion.Maui.DataSource;
+using Syncfusion.Maui.DataSource.Extensions;
 using System;
 using System.Collections.Generic;
 
@@ -18,10 +19,10 @@ namespace ListViewMaui
             set;
         }
 
-        public int Compare(GroupResult x, GroupResult y)
+        public int Compare(GroupResult? x, GroupResult? y)
         {
-            DateTime xvalue = Convert.ToDateTime(x.Key);
-            DateTime yvalue = Convert.ToDateTime(y.Key);
+            DateTime xvalue = Convert.ToDateTime(x!.Key);
+            DateTime yvalue = Convert.ToDateTime(y!.Key);
 
             // Group results are compared and return the SortDirection
             if (xvalue.CompareTo(yvalue) > 0)

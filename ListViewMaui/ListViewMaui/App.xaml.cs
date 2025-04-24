@@ -1,17 +1,14 @@
-﻿using Microsoft.Maui;
-using Microsoft.Maui.Controls;
-using Microsoft.Maui.Controls.PlatformConfiguration.WindowsSpecific;
-using Application = Microsoft.Maui.Controls.Application;
+﻿namespace ListViewMaui;
 
-namespace ListViewMaui
+public partial class App : Application
 {
-	public partial class App : Application
+	public App()
 	{
-		public App()
-		{
-			InitializeComponent();
+		InitializeComponent();
+	}
 
-			MainPage = new MainPage();
-		}
+	protected override Window CreateWindow(IActivationState? activationState)
+	{
+		return new Window(new MainPage());
 	}
 }
