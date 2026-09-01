@@ -1,5 +1,5 @@
-# sorting-and-grouping-.net-maui-listview
-Sorting the listview items along with grouping
+# Sorting the list view items along with grouping in .NET MAUI ListView
+This example describes how to sort the listview items along with grouping in .NET MAUI.
 
 ## Sample
 
